@@ -1,0 +1,16 @@
+result_final
+result
+Craft/data
+Craft/figures*
+convert.py
+demo-vietocr.py
+research.py
+__pycache__
+model
+vietocr/tests/image
+vietocr/tests/sample.txt
+vietocr/train.py
+vietocr/predict.py
+vietocr/__init__.py
+__pycache__
+CRAFT/LICENSE
