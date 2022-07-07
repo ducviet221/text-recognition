@@ -3,21 +3,17 @@ Copyright (c) 2019-present NAVER Corp.
 MIT License
 """
 
-# -*- coding: utf-8 -*-
-import os
 import time
 
 import torch
 from torch.autograd import Variable
 
 import cv2
-from skimage import io
 import numpy as np
 from CRAFT import craft_utils
 from CRAFT import imgproc
-from CRAFT import file_utils
-import json
-import zipfile
+
+
 
 
 from collections import OrderedDict

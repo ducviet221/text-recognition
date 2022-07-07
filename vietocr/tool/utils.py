@@ -1,8 +1,6 @@
-import os
 import gdown
 import yaml
 import numpy as np
-import uuid
 import requests
 
 def download_weights(id_or_url, cached=None, md5=None, quiet=False):
