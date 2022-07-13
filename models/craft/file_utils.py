@@ -2,7 +2,8 @@
 import os
 import numpy as np
 import cv2
-#import imgproc
+from models.craft import imgproc
+from models.craft.craft_utils import test_net
 
 # borrowed from https://github.com/lengstrom/fast-style-transfer/blob/master/src/utils.py
 def get_files(img_dir):
@@ -73,4 +74,26 @@ def saveResult(img_file, img, boxes, dirname='./result/', verticals=None, texts=
 
         # Save result image
         cv2.imwrite(res_img_file, img)
+def load_data(net, test_folder,  canvas_size, mag_ratio, text_threshold, link_threshold, low_text, cuda, poly, show_time, refine_net):
+    image_list, _, _ = get_files(test_folder)
 
+    result_folder = './result/result_craft/'
+    if not os.path.isdir(result_folder):
+        os.mkdir(result_folder)
+    for k, image_path in enumerate(image_list):
+        print("Test image {:d}/{:d}: {:s}".format(k+1, len(image_list), image_path), end='\r')
+        image = imgproc.loadImage(image_path)
+        bboxes, polys, score_text = test_net(net, image, canvas_size, mag_ratio, text_threshold, link_threshold, low_text, cuda, poly, show_time, refine_net)
+
+        saveResult(image_path, image[:,:,::-1], polys, dirname=result_folder)
+    
+def read_image_file():
+    img_files = []
+    for (dirpath, dirnames, filenames) in os.walk('D:/Python/OCR/text-recognition/result/result_craft'):
+   
+        for file in filenames:
+            filename, ext = os.path.splitext(file)
+            ext = str.lower(ext)
+            if ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.png' or ext == '.pgm':
+                img_files.append(os.path.join(dirpath, file))
+    return img_files

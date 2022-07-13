@@ -1,7 +1,4 @@
-result_final
 result
-Craft/data
-Craft/figures
+data
 __pycache__
-model
-__pycache__
+weights

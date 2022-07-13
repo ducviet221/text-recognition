@@ -2,6 +2,10 @@ import gdown
 import yaml
 import numpy as np
 import requests
+from PIL import Image
+import os
+from vietocr.tool.config import Cfg
+from vietocr.tool.predictor import Predictor
 
 def download_weights(id_or_url, cached=None, md5=None, quiet=False):
     if id_or_url.startswith('http'):
@@ -72,3 +76,25 @@ def compute_accuracy(ground_truth, predictions, mode='full_sequence'):
         raise NotImplementedError('Other accuracy compute mode has not been implemented')
 
     return avg_accuracy
+def vietocr(img_files):
+    config = Cfg.load_config_from_name('vgg_transformer')
+
+    config['weights'] = 'D:/Python/OCR/text-recognition/models/weights/transformerocr.pth'
+    config['cnn']['pretrained']=False
+    config['device'] = 'cpu'
+    config['predictor']['beamsearch']=False
+
+    detector = Predictor(config)
+    img_files.clear()
+    for (dirpath, dirnames, filenames) in os.walk(r'D:\Python\OCR\text-recognition\result\result_croped'):
+        for file in filenames:
+            filename, ext = os.path.splitext(file)
+            ext = str.lower(ext)
+            if ext == '.jpg' or ext == '.jpeg' or ext == '.gif' or ext == '.png' or ext == '.pgm':
+                img_files.append(os.path.join(dirpath, file))
+    for x in img_files:
+        img = Image.open(x)
+
+        result = detector.predict(img, return_prob=True)
+
+        print(result)
