@@ -1,22 +1,9 @@
-import os
-import math
-import re
-import imgaug
-#A library for image augmentation in machine learning experiments, 
-#particularly convolutional neural networks. Supports the augmentation of images
-#, keypoints/landmarks, bounding boxes, heatmaps and 
-#segmentation maps in a variety of different ways.
-import numpy as np
-import matplotlib.pyplot as plt
 from keras_ocr import datasets
-import sklearn.model_selection
-import tensorflow as tf
-import typing
 import keras_ocr
 from keras_ocr import datasets
 import argparse
 from keras_ocr.datasets import get_dataset
-from keras_ocr.image_preprocessing import preprocessing,training
+from keras_ocr.utils import preprocessing,training
 
 
 def main():
