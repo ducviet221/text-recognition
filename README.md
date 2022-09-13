@@ -10,3 +10,13 @@ Các bạn tham khảo notebook này để biết cách sử dụng: https://col
 
 DATASET
 Mô hình training bằng dữ liệu được sinh ra từ https://github.com/Belval/TextRecognitionDataGenerator
+
+THÔNG SỐ
+data_root: thư mục lưu toàn bộ dữ liệu ảnh
+train_annotation: đường dẫn đến dữ liệu train
+valid_annotation: đường dẫn đến dữ liệu valid
+print_every: hiện thị train loss sau n bước
+valid_every: hiện thị valid loss sau n bước
+iters: số lần lặp để train mô hình
+export: xuất file weights
+metrics: số lượng mẫu trong valid annotation được dùng để tính toán full_sequence_accuracy
