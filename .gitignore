@@ -1,0 +1,5 @@
+weights
+venv
+*.csv
+__pycache__
+.vs
