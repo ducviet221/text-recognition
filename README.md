@@ -12,9 +12,9 @@ Mô tả: Craft detection sẽ khoanh vùng nơi có các kí tự theo nhiều 
 
 ## 2. Để chạy thử mô hình ta chạy file sample.py
 
-##3. Để kiểm tra độ chính xác mô hình ta chạy file accuuracy.py trong folder keras_ocr
+## 3. Để kiểm tra độ chính xác mô hình ta chạy file accuuracy.py trong folder keras_ocr
     Độ chính xác của mô hình là 78.563%
-## 3. Để huấn luyện mô hình ta chạy file main.py. Trong đó:
+## 4. Để huấn luyện mô hình ta chạy file main.py. Trong đó:
 - `-l` là folder label, khi huấn luyện mô hình bạn thay đường dẫn folder label vào "default"
 - `-i` là folder ảnh training, khi huấn luyện bạn thay đường dẫn folder ảnh vào "default" 
 - `-cp` là đường dẫn mô hình khi training xong, bạn thay đường dẫn nơi bạn muốn để model và đặt tên cho model.
@@ -25,7 +25,7 @@ Mô tả: Craft detection sẽ khoanh vùng nơi có các kí tự theo nhiều 
 - `-r` là random_state có chức năng phân chia các tập dữ liệu kiểm tra và huấn luyện một cách ngẫu nhiên
 - `-t` là train_size, với train_size = 0.8 mô hình sẽ chia bộ dữ liệu ra thành 2 phần với 80% dữ liệu để training và 20% dữ liệu để test
 
-## 4. Example 
+## 5. Example 
 
 ![example](image_sample/1.jpg)
 
@@ -36,4 +36,6 @@ Mô tả: Craft detection sẽ khoanh vùng nơi có các kí tự theo nhiều 
 ![example4](image_sample/5.jpg)
 
 ![example4](image_sample/6.jpg)
+
+![example4](image_sample/3.jpg)
 
