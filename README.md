@@ -5,7 +5,7 @@ Mô tả: Craft detection sẽ khoanh vùng nơi có các kí tự theo nhiều 
 - Dữ liệu huấn luyện: VinAI
 - Bài báo: [Read here ](https://arxiv.org/pdf/1904.01941.pdf)
 - Code gốc: [Read here ](https://github.com/faustomorales/keras-ocr) 
-
+- Download model [tại đây](https://drive.google.com/drive/folders/1VSsG4m5qGS6ZLfi2SNSjCdxaJx1wnQda?usp=sharing)
 ## 1. Dữ liệu đầu vào gồm:
 - Ảnh: Ảnh có đuôi .jpg và có kích cỡ không giới hạn, trong ảnh bao gồm các vùng văn bản để nhận diện
 - Nhãn: Nhãn được ghi trong file .txt gồm 9 phần tử bao gồm: 8 phần tử số và phần tử chữ ở cuối được nhận diện sẽ được đánh dấu trong cặp dấu ngoặc kép(""), các phần tử cách nhau bằng dấu cách.
@@ -33,5 +33,7 @@ Mô tả: Craft detection sẽ khoanh vùng nơi có các kí tự theo nhiều 
 
 ![example3](image_sample/4.jpg)
 
-![example4](image_sample/4.jpg)
+![example4](image_sample/5.jpg)
+
+![example4](image_sample/6.jpg)
 
